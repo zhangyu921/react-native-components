@@ -18,7 +18,9 @@ class ListViewChat extends Component {
     static propTypes = {
         ...FlatList.propTypes,
         onGetOlderData: PropTypes.func, //获取历史数据
-        offSet: PropTypes.number // 如出现抖动可适当调大，默认15
+        // 如果你的item有可能根据排序不同而变化高度（这相当少见）
+        // 在临界时出现抖动，可适当调大offset，默认15
+        offset: PropTypes.number 
     };
 
     constructor (p) {
@@ -62,9 +64,9 @@ class ListViewChat extends Component {
 
     _checkToScaleList = () => {
         let shouldScale;
-        if (this.listContentHeight > this.listMaxContentHeight + (this.props.offSet || 15)) {
+        if (this.listContentHeight > this.listMaxContentHeight + (this.props.offset || 15)) {
             shouldScale = true;
-        } else if (this.listContentHeight < this.listMaxContentHeight - (this.props.offSet || 15)) {
+        } else if (this.listContentHeight < this.listMaxContentHeight - (this.props.offset || 15)) {
             shouldScale = false;
         } else {
             return;
