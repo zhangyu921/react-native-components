@@ -1,9 +1,9 @@
 # React Native components
+RN组件收集，提供思路。
 
 ## listViewChat
 
-Like Wechat chat sence, when data less than full screen, it will be a normal ListView.
-When data over screen, the list will be scaled `transform`. The benifis is when new message came, we needn't to scroll ListView manually. So does in Keyboard aviod or hide.
-And when re-render list, the latest data will be first render, firster to be seem.
-
+类似微信聊天界面，列表功能的实现。
+当item不足一屏高度，显示正常列表。当超出一屏时，通过transform scale属性，翻转列表和item。
+优点是，在大量的地方不需要进行手动 scrollToEnd, 最优先加载的就是最新的消息。当键盘弹出和隐藏时也是适时调整的。
 
