@@ -1,6 +1,8 @@
 /**
  * 类似微信聊天界面，列表功能的RN实现
  * ！！：需要注意数据data，期待按时间降序排列(最新的信息在0位）
+ * @author zhangyu921 <zhyuz@outlook.com>
+ * @License MIT
  */
 
 import React, { Component, PropTypes } from 'react';
